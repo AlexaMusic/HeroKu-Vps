@@ -8,8 +8,7 @@
 * Read this Before Deploy : [Term Of Service Railway](https://railway.app/legal/fair-use)
 
 ## Deploy Now!
-[![Deploy on Railway](https://railway.app/button.svg)](hahaha)
- 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/12eRa6?referralCode=Abhimanyu)
  Developer :- [Abhimanyu Singh Ranawat](t.me/VeNom_HaiN_HuM)
 
 Credit :- [Stranger](t.me/ItzMehHaznLol) 
