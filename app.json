@@ -19,11 +19,5 @@
       "web": "Dockerfile"
     }
   },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Free"
-    }
-  },
   "stack": "container"
 }
