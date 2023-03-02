@@ -18,7 +18,6 @@
         "description": "The custom password for the root user",
         "value": "",
         "required": true
-      }
     }
   },
   "formation": {
