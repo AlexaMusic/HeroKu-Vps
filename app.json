@@ -18,11 +18,11 @@
   "scripts": {
     "postdeploy": "./1.sh"
   },
-  "buildpacks": [
-    {
-      "url": "heroku/docker"
+  "build": {
+    "docker": {
+      "web": "Dockerfile"
     }
-  ],
+  },
   "stack": "container",
   "environments": {
     "production": {
