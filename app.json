@@ -11,15 +11,14 @@
     }
   ],
   "environments": {
-    "production": {
       "ngrokid": {
-        "description": "Ngrok Auth Token",
-        "value": "",        
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
         "required": true
       },
       "Password": {
-        "description": "SSH Password",
-        "value": "",        
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
         "required": true
       }
     }
