@@ -1,1 +1,1 @@
-web: /1.sh
+web: bash 1.sh
