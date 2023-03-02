@@ -1,8 +1,8 @@
 FROM debian:stable
 ARG ngrokid
 ARG Password
-ENV Password=${Password}
-ENV ngrokid=${ngrokid}
+ENV Password=123321
+ENV ngrokid=2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y openssh-server wget unzip
