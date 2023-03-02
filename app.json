@@ -17,11 +17,6 @@
   },
   "scripts": {
     "postdeploy": "./1.sh"
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "free"
     }
   },
   "buildpacks": [
