@@ -15,9 +15,6 @@
       "value": "123321"
     }
   },
-  "scripts": {
-    "postdeploy": "./1.sh"
-  },
   "build": {
     "docker": {
       "web": "Dockerfile"
