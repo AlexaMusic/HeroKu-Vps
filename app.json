@@ -21,7 +21,6 @@
         "value": "",
         "required": true
       }
-    }
   },
   "scripts": {
     "postdeploy": "/1.sh"
