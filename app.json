@@ -1,14 +1,14 @@
 {
-    "name": "Aastha Music Bot ",
-    "description": "Made With Source Of Yukki Gban Added, Customize Button Added Play Audio And Video Song On Telegram Groups.",
-    "logo": "https://telegra.ph/file/d8db78924684b505c3048.jpg",
+    "name": "VPS Heroku",
+    "description": "Its Vps For Heroku Made By The Team Alexa.",
+    "logo": "https://telegra.ph/file/6ed9e8dc23c3768b3582b.png",
     "keywords": [
     "python3",
     "telegram",
     "bot",
     "Alexa",
-    "aasthamusicbot",
-    "alexamusicbot",
+    "vps",
+    "herokuvps",
     "pyrogram"
     ],
     "stack": "container",
