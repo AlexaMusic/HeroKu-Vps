@@ -18,4 +18,4 @@ RUN mkdir /run/sshd && \
     service ssh start && \
     chmod 755 /1.sh
 EXPOSE 80 8888 8080 443 5130-5135 3306
-CMD bash start 1.sh
+CMD bash 1.sh
