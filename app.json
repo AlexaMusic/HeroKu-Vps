@@ -1,39 +1,52 @@
 {
-  "name": "my-ssh-app",
-  "description": "A Dockerized SSH server with ngrok",
-  "image": "my-ssh-app",
-  "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "13"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-apt"
-    },
-    {
-      "url": "heroku/docker"
-    }
-  ],
+  "name": "my-app",
+  "description": "A description of my app",
+  "image": "docker-image-name",
+  "addons": [],
   "env": {
     "ngrokid": {
-      "description": "ngrok auth token",
-        "value": "",      
-      "required": true
+      "description": "Description of ngrokid env variable",
+      "value": "2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr"
     },
     "Password": {
-      "description": "root password",
-        "value": "",      
-      "required": true
+      "description": "Description of Password env variable",
+      "value": "123321"
     }
   },
-  "scripts": {
-    "postdeploy": "/1.sh"
+  "stack": "heroku-18",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-docker"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1X",
+      "port": "80",
+      "healthcheck": {
+        "command": "curl --fail http://localhost/ || exit 1",
+        "interval": 30,
+        "timeout": 10,
+        "threshold": 1,
+        "restart": {
+          "limit": 3,
+          "interval": 60,
+          "type": "immediate"
+        }
+      },
+      "routes": [
+        {
+          "hostname": "my-app.herokuapp.com"
+        }
+      ],
+      "command": "/1.sh"
+    }
   },
-  "expose": [
+  "processes": {
+    "web": "1"
+  },
+  "ports": [
     "80",
     "8888",
     "8080",
