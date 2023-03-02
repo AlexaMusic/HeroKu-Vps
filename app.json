@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "stack": "heroku-20"
-  ...
 }
     "env": {
       "Password": {
