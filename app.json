@@ -1,21 +1,37 @@
 {
-  "name": "my-ssh-tunnel-app",
-  "description": "An SSH tunneling app with ngrok and authtoken and SSH password",
-  "keywords": ["SSH", "tunneling", "ngrok", "authtoken", "password"],
-  "image": "my-ssh-tunnel-image",
-  "addons": [],
-  "buildpacks": [
+  "name": "my-ssh-server",
+  "description": "A Docker container running an SSH server with Ngrok tunneling",
+  "image": "my-ssh-server",
+  "addons": [
     {
-      "url": "heroku/buildpacks:18"
-    },
-    {
-      "url": "heroku-community/apt"
+      "plan": "heroku-postgresql",
+      "as": "DATABASE"
     }
   ],
   "environments": {
     "test": {
-      "ngrokid": "2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr",
-      "Password": "123321"
+      "ngrokid": {
+        "description": "The Ngrok AuthToken",
+        "value": "",        
+        "required": true
+      },
+      "Password": {
+        "description": "The custom password for the root user",
+        "value": "",        
+        "required": true
+      }
     }
-  }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Free"
+    }
+  },
+  "build": {
+    "docker": {
+      "web": "Dockerfile"
+    }
+  },
+  "stack": "container"
 }
