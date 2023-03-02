@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM debian:stable
 RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1
 ARG ngrokid
 ARG Password
