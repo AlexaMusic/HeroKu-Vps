@@ -3,10 +3,3 @@ build:
     web: Dockerfile
 run:
   web: /1.sh
-  ports:
-    - 80
-    - 8888
-    - 8080
-    - 443
-    - 5130-5135
-    - 3306
