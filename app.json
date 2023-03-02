@@ -1,35 +1,21 @@
 {
-  "name": "ngrok-ssh",
-  "description": "A Docker container for SSH tunneling with ngrok",
-  "image": "your-docker-image-name",
-  "addons": [
-    "heroku-postgresql"
-  ],
+  "name": "my-ssh-tunnel-app",
+  "description": "An SSH tunneling app with ngrok and authtoken and SSH password",
+  "keywords": ["SSH", "tunneling", "ngrok", "authtoken", "password"],
+  "image": "my-ssh-tunnel-image",
+  "addons": [],
   "buildpacks": [
     {
-      "url": "heroku/docker"
+      "url": "heroku/buildpacks:18"
+    },
+    {
+      "url": "heroku-community/apt"
     }
   ],
   "environments": {
-      "ngrokid": {
-        "description": "Get this value from https://my.telegram.org",
-        "value": "",
-        "required": true
-      },
-      "Password": {
-        "description": "Get this value from https://my.telegram.org",
-        "value": "",
-        "required": true
-      }
-  },
-  "scripts": {
-    "postdeploy": "/1.sh"
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Free"
+    "test": {
+      "ngrokid": "2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr",
+      "Password": "123321"
     }
-  },
-  "stack": "container"
+  }
 }
