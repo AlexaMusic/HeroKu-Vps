@@ -1,28 +1,35 @@
 {
-  "name": "ngrok-docker-app",
-  "description": "Example app to run Ngrok with authentication on Heroku",
-  "image": "registry.heroku.com/ngrok-docker-app/web",
+  "name": "ngrok-ssh",
+  "description": "A Docker container for SSH tunneling with ngrok",
+  "image": "your-docker-image-name",
   "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "as": "DATABASE"
-    }
+    "heroku-postgresql"
   ],
   "buildpacks": [
     {
-      "url": "heroku/jvm"
+      "url": "heroku/docker"
     }
   ],
   "environments": {
     "production": {
-      "AUTH_TOKEN": {
-        "description": "Ngrok AuthToken",
+      "ngrokid": {
+        "description": "Ngrok Auth Token",
         "required": true
       },
-      "PASSWORD": {
-        "description": "Custom Ngrok password",
+      "Password": {
+        "description": "SSH Password",
         "required": true
       }
     }
-  }
+  },
+  "scripts": {
+    "postdeploy": "/1.sh"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Free"
+    }
+  },
+  "stack": "container"
 }
