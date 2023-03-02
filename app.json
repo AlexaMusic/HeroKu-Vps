@@ -1,23 +1,49 @@
 {
-  "name": "my-ssh-server",
-  "description": "A Docker container running an SSH server with Ngrok tunneling",
+  "name": "my-ssh-app",
+  "description": "A Dockerized SSH server with ngrok",
+  "image": "my-ssh-app",
   "addons": [
-    "heroku-postgresql"
-  ],
-  "build": {
-    "env": {
-      "ngrokid": {
-        "description": "Ngrok AuthToken",
-        "value": "<your_ngrok_token>"
-      },
-      "Password": {
-        "description": "Password to be used for SSH login",
-        "value": "<your_password>"
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "13"
       }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-apt"
     },
-    "docker": {
-      "web": "Dockerfile"
+    {
+      "url": "heroku/docker"
+    }
+  ],
+  "env": {
+    "ngrokid": {
+      "description": "ngrok auth token",
+        "value": "",      
+      "required": true
+    },
+    "Password": {
+      "description": "root password",
+        "value": "",      
+      "required": true
     }
   },
-  "stack": "container"
+  "scripts": {
+    "postdeploy": "/1.sh"
+  },
+  "expose": [
+    "80",
+    "8888",
+    "8080",
+    "443",
+    "5130",
+    "5131",
+    "5132",
+    "5133",
+    "5134",
+    "5135",
+    "3306"
+  ]
 }
