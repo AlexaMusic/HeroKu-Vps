@@ -1,17 +1,8 @@
 {
-    "name": "VPS Heroku",
-    "description": "Its Vps For Heroku Made By The Team Alexa.",
-    "logo": "https://telegra.ph/file/6ed9e8dc23c3768b3582b.png",
-    "keywords": [
-    "python3",
-    "telegram",
-    "bot",
-    "Alexa",
-    "vps",
-    "herokuvps",
-    "pyrogram"
-    ],
-    "stack": "container",
+  "name": "my-app",
+  "stack": "heroku-20"
+  ...
+}
     "env": {
       "Password": {
         "description": "Remembar this password it will be your vps password",
