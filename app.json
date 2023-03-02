@@ -1,62 +1,40 @@
 {
   "name": "my-app",
-  "description": "A description of my app",
-  "image": "docker-image-name",
-  "addons": [],
+  "description": "My Heroku app",
+  "image": "docker-image",
+  "addons": [
+    "heroku-postgresql"
+  ],
   "env": {
     "ngrokid": {
-      "description": "Description of ngrokid env variable",
+      "description": "ngrok ID",
       "value": "2MSyGdDaEzOIDpqxbKs59EJcAch_3ugkkbCVY8rPEdgSHwKqr"
     },
     "Password": {
-      "description": "Description of Password env variable",
+      "description": "Root password",
       "value": "123321"
     }
   },
-  "stack": "heroku-18",
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-docker"
-    }
-  ],
+  "scripts": {
+    "postdeploy": "./1.sh"
+  },
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "Standard-1X",
-      "port": "80",
-      "healthcheck": {
-        "command": "curl --fail http://localhost/ || exit 1",
-        "interval": 30,
-        "timeout": 10,
-        "threshold": 1,
-        "restart": {
-          "limit": 3,
-          "interval": 60,
-          "type": "immediate"
-        }
-      },
-      "routes": [
-        {
-          "hostname": "my-app.herokuapp.com"
-        }
-      ],
-      "command": "/1.sh"
+      "size": "free"
     }
   },
-  "processes": {
-    "web": "1"
-  },
-  "ports": [
-    "80",
-    "8888",
-    "8080",
-    "443",
-    "5130",
-    "5131",
-    "5132",
-    "5133",
-    "5134",
-    "5135",
-    "3306"
-  ]
+  "buildpacks": [
+    {
+      "url": "heroku/docker"
+    }
+  ],
+  "stack": "container",
+  "environments": {
+    "production": {
+      "addons": [
+        "heroku-postgresql"
+      ]
+    }
+  }
 }
