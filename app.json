@@ -24,16 +24,5 @@
         "required": true
       }
     },
-    "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "https://github.com/heroku/heroku-buildpack-apt"
-          },
-          {              
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-      ],
       "stack": "heroku-20"
   }
