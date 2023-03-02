@@ -1,7 +1,17 @@
 {
-  "name": "my-app",
-  "stack": "heroku-20"
-}
+    "name": "Aastha Music Bot ",
+    "description": "Made With Source Of Yukki Gban Added, Customize Button Added Play Audio And Video Song On Telegram Groups.",
+    "logo": "https://telegra.ph/file/d8db78924684b505c3048.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "Alexa",
+    "aasthamusicbot",
+    "alexamusicbot",
+    "pyrogram"
+    ],
+    "stack": "heroku-20",
     "env": {
       "Password": {
         "description": "Remembar this password it will be your vps password",
@@ -25,5 +35,5 @@
               "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
           }
       ],
-      "stack": "container"
+      "stack": "heroku-20"
   }
