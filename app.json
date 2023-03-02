@@ -14,10 +14,12 @@
     "production": {
       "ngrokid": {
         "description": "Ngrok Auth Token",
+        "value": "",        
         "required": true
       },
       "Password": {
         "description": "SSH Password",
+        "value": "",        
         "required": true
       }
     }
