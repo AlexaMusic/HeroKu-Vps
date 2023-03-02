@@ -1,23 +1,22 @@
 {
   "name": "my-ssh-server",
   "description": "A Docker container running an SSH server with Ngrok tunneling",
-  "image": "my-ssh-server",
+    "image": {
+    "name": "myimage",
+    "dockerfile": "Dockerfile"
+  },
   "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "as": "DATABASE"
-    }
+    "heroku-postgresql"
   ],
-   "environments": {
+  "build": {
+    "env": {
       "ngrokid": {
-        "description": "The Ngrok AuthToken",
-        "value": "",
-        "required": true
+        "description": "Ngrok AuthToken",
+        "value": "<your_ngrok_token>"
       },
       "Password": {
-        "description": "The custom password for the root user",
-        "value": "",
-        "required": true
+        "description": "Password to be used for SSH login",
+        "value": "<your_password>"
      }
   },
   "formation": {
