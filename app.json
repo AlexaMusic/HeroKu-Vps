@@ -8,16 +8,15 @@
       "as": "DATABASE"
     }
   ],
-  "environments": {
-    "test": {
+   "environments": {
       "ngrokid": {
         "description": "The Ngrok AuthToken",
-        "value": "",        
+        "value": "",
         "required": true
       },
       "Password": {
         "description": "The custom password for the root user",
-        "value": "",        
+        "value": "",
         "required": true
       }
     }
